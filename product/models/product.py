@@ -1,6 +1,6 @@
 from django.db import models
 
-from .category import Category
+from product.models import Category
 
 
 class Product(models.Model):
@@ -8,4 +8,4 @@ class Product(models.Model):
     description = models.TextField(max_length=500, blank=True, null=True)
     price = models.PositiveBigIntegerField(null=True)
     active = models.BooleanField(default=True)
-    categoriy = models.ManyToManyField(Category, blank=True)
+    category = models.ManyToManyField(Category, blank=True)
