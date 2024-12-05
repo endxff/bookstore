@@ -8,4 +8,4 @@ class ProductViewSet(ModelViewSet):
     serializer_class = ProductSerializer
 
     def get_queryset(self):  # Queryset (2/2)
-        return Product.objects.all()
+        return Product.objects.all().order_by("id")
